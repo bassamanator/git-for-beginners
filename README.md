@@ -24,6 +24,10 @@ By convention, the word "origin" is used to refer to the remote repository, howe
 
 <!-- give example with gitlab and github as remotes -->
 
+## What Is Github/Gitlab?
+
+To keep things simple, I'm going to say that these are platforms, were you can store your code, your repositories.
+
 # How to Initialize a Git Repository
 
 ```bash
@@ -87,6 +91,11 @@ git status
 ```
 
 # How to a Add Remote
+
+<details>
+<summary>You can get the link to your repository from your repository's main view.</summary>
+<img src='./images/repo-link.png'>
+</details><br>
 
 ```BASH
 git remote add origin git@github.com:USERNAME/REPOSITORYNAME.git
