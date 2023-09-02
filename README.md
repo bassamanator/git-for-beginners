@@ -104,7 +104,7 @@ In `Git` speak, you switch branches by 'checking them out.'
 
 ## How to Checkout a New Branch
 
-This is the same as creating a new branch. The branch will 'branch out' from your currently checkout branch.
+This is the same as creating a new branch. The branch will 'branch out' from your currently checked out branch.
 
 ```BASH
 git checkout -b BRANCHNAME
