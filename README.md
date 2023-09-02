@@ -1,3 +1,11 @@
+${\normalsize{\textcolor{red}{\texttt{This Is a Work in Progress}}}}$
+
+# Preface
+
+This is a beginner reference or tutorial. I will include only things that are necessary for the user to start using `Git`. I will try to avoid even mentioning complex topics or scenarios.
+
+After reading this entire document, the user should be ready to start using `Git` locally, and should be able to collaborate with remote users as well.
+
 # Basic Concepts
 
 ## Repository
@@ -90,7 +98,27 @@ This will show you if there are any changes in the `Git` repository, and if any 
 git status
 ```
 
-# How to a Add Remote
+# How to Switch Branches
+
+In `Git` speak, you switch branches by 'checking them out.'
+
+## How to Checkout a New Branch
+
+This is the same as creating a new branch. The branch will 'branch out' from your currently checkout branch.
+
+```BASH
+git checkout -b BRANCHNAME
+```
+
+## How to Checkout a Pre-existing Branch
+
+```BASH
+git checkout BRANCHNAME
+```
+
+# How to Handle Remote Repositories
+
+## How to a Add "Remote"
 
 <details>
 <summary>You can get the link to your repository from your repository's main view.</summary>
@@ -99,4 +127,57 @@ git status
 
 ```BASH
 git remote add origin git@github.com:USERNAME/REPOSITORYNAME.git
+```
+
+## How to Push Your Local Branch
+
+```BASH
+git push --set-upstream origin BRANCHNAME
+```
+
+- `BRANCHNAME` is the local branch you want to push to the remote repository.
+- It is assumed that you have `checked out` this branch.
+
+## How to Fetch Remote Changes
+
+### Fetch
+
+`Fetch` will fetch all the new branches, tags, commits from "remote", but will not _apply_ them or merge the changes. No local changes will occur.
+
+```BASH
+git fetch
+```
+
+### Pull
+
+`Pull` on the other hand will do a `git fetch` and then apply the changes (if there are any) to the branch that is checked out. `git pull` is basically a `git fetch` followed by a `git merge`.
+
+```BASH
+git pull
+```
+
+<!-- # Example Git Workflow
+
+```BASH
+git init
+git add .
+git commit -m "First commit."
+``` -->
+
+# Useful Aliases
+
+## gitlogr
+
+This alias will display the `Git` commit history in a stylized fashion, including commit author names.
+
+## How To
+
+1. On a new line, add the alias to your `.zshrc` or `.bashrc`.
+2. Save.
+3. Close the terminal currently used, and then open a new terminal.
+4. While inside a folder that is tracked by `Git`, type `gitlogr` to see the commit history.
+5. Exit the commit history view by pressing `q`.
+
+```BASH
+alias gitlogr="git log --all --graph --decorate --oneline --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"
 ```
